@@ -223,6 +223,25 @@ export default function ChatPage() {
         }
         .chat-form button:hover{ transform:scale(1.04); background:var(--lime-soft); }
         .chat-form button:disabled{ opacity:.5; cursor:default; transform:none; }
+
+        /* ---------- Mobile ---------- */
+        @media (max-width:640px){
+          .chat-header{ padding:10px 14px; gap:10px; }
+          .chat-avatar{ width:36px; height:36px; font-size:1.05rem; box-shadow:0 0 0 3px rgba(122,193,67,.25); }
+          .chat-header h1{ font-size:1.05rem; }
+          .chat-header p{ display:none; }       /* la descripción no entra: afuera */
+          .chat-back{ padding:8px 13px; font-size:.85rem; }
+          .back-label{ display:none; }          /* queda solo la flecha ← */
+          .chat-scroll{ padding:18px 14px; gap:12px; }
+          .bubble{ max-width:88%; font-size:.92rem; padding:12px 14px; }
+          .chat-empty .big{ font-size:2.6rem; }
+          .chat-empty h2{ font-size:1.25rem; }
+          .chat-empty p{ font-size:.88rem; }
+          .chips button{ padding:8px 13px; font-size:.78rem; }
+          .chat-form{ padding:10px 12px 14px; gap:8px; }
+          .chat-form input{ padding:12px 16px; font-size:16px; } /* 16px: evita el auto-zoom de iOS */
+          .chat-form button{ padding:12px 18px; font-size:.88rem; }
+        }
       `}</style>
 
       <div className="chat-shell">
@@ -235,7 +254,7 @@ export default function ChatPage() {
             <p>Asistente IA del Plan Kiwi Joven · responde con el TP y, si hace falta, busca en la web</p>
           </div>
           <Link className="chat-back" href="/">
-            ← Volver a la landing
+            ← <span className="back-label">Volver a la landing</span>
           </Link>
         </header>
 
